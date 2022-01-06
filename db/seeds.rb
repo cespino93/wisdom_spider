@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-design = Category.create(name: "Art")
-coding = Category.create(name: "Tech")
-health = Category.create(name: "Science")
+design = Category.create(name: "Design")
+coding = Category.create(name: "Coding")
+health = Category.create(name: "Health")
+
+Website.create(title: "TinyWow", description: "Perfect for computer users arouind the world", 
+    image_url: "https://tinywow.com/v2/img/logo.svg", category_id: design.id)
