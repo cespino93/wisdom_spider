@@ -1,7 +1,13 @@
 class Api::V1::WebsitesController < ApplicationController
     def index
-        @websites = Website.all
-        render json: @websites
+        websites = Website.all
+        #render json: @websites
+        # options = {
+        #     #include associated category
+        #     include: [:category]
+        # }
+        #render json: WebsiteSerializer.new(websites, options)
+        render json: WebsiteSerializer.new(websites)
     end 
     
     def create
