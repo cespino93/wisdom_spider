@@ -5,5 +5,6 @@ namespace :api do
     resources :websites, only: [:index]
   end
 end
+
 end
 
