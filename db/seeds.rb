@@ -12,5 +12,5 @@ design = Category.create(name: "Design")
 coding = Category.create(name: "Coding")
 health = Category.create(name: "Health")
 
-Website.create(title: "TinyWow", description: "Perfect for computer users arouind the world", 
+Website.create(title: "TinyWow", description: "Perfect for computer users around the world", 
     image_url: "https://tinywow.com/v2/img/logo.svg", category_id: design.id)
