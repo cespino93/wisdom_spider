@@ -1,5 +1,5 @@
 class AddCategoryToWebsite < ActiveRecord::Migration[6.1]
   def change
-    add_reference :websites, :category, foreign_key: true
+    add_reference :websites, :category, null: false, foreign_key: true
   end
 end

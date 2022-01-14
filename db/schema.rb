@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_01_07_041911) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "category_id"
+    t.bigint "category_id", null: false
     t.index ["category_id"], name: "index_websites_on_category_id"
   end
 
