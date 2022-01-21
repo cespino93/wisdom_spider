@@ -1,6 +1,6 @@
 class CreateWebsites < ActiveRecord::Migration[6.1]
     def change
-      create_table :adventures do |t|
+      create_table :websites do |t|
         t.string :title
         t.string :description
         t.string :image_url
