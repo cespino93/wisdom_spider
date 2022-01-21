@@ -22,6 +22,12 @@ class Api::V1::WebsitesController < ApplicationController
         end
     end
 
+    def destroy
+        websites = Website.find_by_id(params[:id])
+        websites.destroy
+        render json: {message: "#{websites.title} was successfully deleted"}
+    end
+
     private
 
     def website_params
