@@ -31,6 +31,6 @@ class Api::V1::WebsitesController < ApplicationController
     private
 
     def website_params
-        params.require(:website).permit(:title, :description, :image_url, :category_id)
+        params.require(:websites).permit(:title, :description, :image_url, :category_id)
     end
 end
