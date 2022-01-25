@@ -11,26 +11,25 @@ class Api::V1::WebsitesController < ApplicationController
     end 
     
     def create
-        websites = Website.new(website_params) 
+        website = Website.new(website_params) 
         #this is a strong params code
         if website.save
-            render json: website, status: :accepted
+            render json: WebsiteSerializer.new(website)
             # sends status codes to the fetch request
-          
         else
-            render json: {errors: website.errors.full_messages}, status: :unprocessible_entity
+            render json: {errors: website.errors.full_messages}
         end
     end
 
-    def destroy
-        websites = Website.find_by_id(params[:id])
-        websites.destroy
-        render json: {message: "#{websites.title} was successfully deleted"}
-    end
+    # def destroy
+    #     websites = Website.find_by_id(params[:id])
+    #     websites.destroy
+    #     render json: {message: "#{websites.title} was successfully deleted"}
+    # end
 
     private
 
     def website_params
-        params.require(:websites).permit(:title, :description, :image_url, :category_id)
+        params.require(:website).permit(:title, :description, :image_url, :category_id)
     end
 end
